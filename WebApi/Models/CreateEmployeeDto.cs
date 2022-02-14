@@ -4,7 +4,7 @@ using AutoMapper;
 
 namespace WebApi.Models
 {
-    public class CreateEmployeeDto : IMapWith<CreateEmployeeCommand>
+    public class CreateEmployeeDto : IMapFrom<CreateEmployeeCommand>
     {
         public string Name { get; set; }
         public string Surname { get; set; }

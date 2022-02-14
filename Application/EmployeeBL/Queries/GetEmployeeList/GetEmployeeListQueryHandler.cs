@@ -16,7 +16,7 @@ namespace Application.EmployeeBL.Queries.GetEmployeeList
         private readonly IMapper _mapper;
         private readonly IApplicationDbContext _dbContext;
 
-        public GetEmployeeListQueryHandler(IApplicationDbContext dbContext) => _dbContext = dbContext;
+        public GetEmployeeListQueryHandler(IApplicationDbContext dbContext, IMapper mapper) => (_mapper, _dbContext) = (mapper, dbContext);
 
         public async Task<EmployeeListVm> Handle(GetEmployeeListQuery request, CancellationToken cancellationToken)
         {

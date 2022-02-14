@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.EmployeeBL.Queries.GetEmployeeList
 {
-    public class EmployeeItemDto : IMapWith<Employee>
+    public class EmployeeItemDto : IMapFrom<Employee>
     {
         public Guid Id { get; set; }
         public string? Name { get; set; }
@@ -20,16 +20,16 @@ namespace Application.EmployeeBL.Queries.GetEmployeeList
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Employee, EmployeeItemDto>()
-                .ForMember(agentDto => agentDto.Id,
-                    opt => opt.MapFrom(agent => agent.Id))
-                .ForMember(agentDto => agentDto.Name,
-                    opt => opt.MapFrom(agent => agent.Name))
-                .ForMember(agentDto => agentDto.Surname,
-                    opt => opt.MapFrom(agent => agent.Surname))
-                .ForMember(agentDto => agentDto.Patronymic,
-                    opt => opt.MapFrom(agent => agent.Patronymic))
-                .ForMember(agentDto => agentDto.Profile,
-                    opt => opt.MapFrom(agent => agent.Profile));
+                .ForMember(empDto => empDto.Id,
+                    opt => opt.MapFrom(emp => emp.Id))
+                .ForMember(empDto => empDto.Name,
+                    opt => opt.MapFrom(emp => emp.Name))
+                .ForMember(empDto => empDto.Surname,
+                    opt => opt.MapFrom(emp => emp.Surname))
+                .ForMember(empDto => empDto.Patronymic,
+                    opt => opt.MapFrom(emp => emp.Patronymic))
+                .ForMember(empDto => empDto.Profile,
+                    opt => opt.MapFrom(emp => emp.Profile));
         }
     }
 }

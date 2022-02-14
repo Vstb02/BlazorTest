@@ -4,7 +4,7 @@ using AutoMapper;
 
 namespace WebApi.Models
 {
-    public class UpdateEmployeeDto : IMapWith<UpdateEmployeeCommand>
+    public class UpdateEmployeeDto : IMapFrom<UpdateEmployeeCommand>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

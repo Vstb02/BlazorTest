@@ -1,10 +1,10 @@
 ﻿@page "/"
 @using BlazorClient.Components
+@using BlazorClient.Models
+@inject HttpClient Http
 
 <PageTitle>Index</PageTitle>
 
-<EmployeeList></EmployeeList>
-
-Welcome to your new app.
+<Employee></Employee>
 
 <SurveyPrompt Title="How is Blazor working for you?" />
